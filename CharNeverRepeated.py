@@ -10,7 +10,7 @@ def findRepeatChar(str):
         return -1
     # one by one, check the charcaters in dictionary. If found, return the char. Else add the char to dictionary
     charDictionary = {}
-    for ch in str:
+    for ch in str.lower():
         if ch != " ":
             if ch in charDictionary:
                 return ch
@@ -27,6 +27,10 @@ print(findRepeatChar('ab cd   e a'))
 # with multiple repeated chars
 print('ab cd   ed  c b a -exp c')
 print(findRepeatChar('ab cd   e  c b a'))
+
+# with lower and upper repeated chars
+print('ab cd   e  E b a -exp e')
+print(findRepeatChar('ab cd   e  E b a'))
 
 # with no repeated char
 print('ab cd   ed - exp None')
